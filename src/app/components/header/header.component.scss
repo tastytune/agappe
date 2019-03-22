@@ -1,0 +1,86 @@
+
+header {
+    color: var(--secondary-color);
+      
+    text-align: center;    
+    background: radial-gradient(ellipse at top left, #3f0202 0, var(--main-color) 100%);
+    display: flex;
+    position: absolute;    
+    left: 0px;    
+    align-items: self-end;    
+    padding-left: 3vw;    
+    height: 39vh;    
+    width: 65vw;
+    clip-path:polygon(0px 0px, 100% 0px, 74% 86%, 40px 107%);
+    background-size: 0.03vw 0.25vw;  
+    h1{
+        
+        margin: 0px;
+        font: 400 10vw 'Oleo Script', Helvetica, sans-serif;
+        text-shadow: 1px 14px 10px #0000008c;
+        align-self: center;
+        box-shadow: -30px 59px 160px black;
+        border-radius: 50%;
+        border: 16px white solid;
+        background: radial-gradient(ellipse at top left, #63292966 0, #391616 100%);
+    
+        
+    }
+    h3 {
+        font-size: 2vw;
+        font-family: Montserrat,sans-serif;  
+        background: linear-gradient(220deg, #570000, #ad0000);
+        background-clip: border-box;
+        background-clip: border-box;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        text-shadow: 0px -2px 1px #ff1b1b;
+        transform: translate(-3vw, 0vw);
+        
+
+        
+    }
+    .star {
+        position: absolute;
+        z-index: 1000;
+        top: 0px;
+        width: 0;
+        height: 0;
+        margin: .5vw .2vw 0;
+        color: var(--fith-color);
+        position: relative;
+        display: block;
+        border-right: 1vw solid transparent;
+        border-bottom: .7vw solid var(--fith-color);
+        border-left: 1vw solid transparent;
+        -moz-transform: rotate(35deg);
+        -webkit-transform: rotate(35deg);
+        -ms-transform: rotate(35deg);
+        -o-transform: rotate(35deg);
+    
+    }
+    .star::before {
+        top: -.45vw;
+        left: -.65vw;
+        border-bottom: .8vw solid var(--fith-color);
+        border-left: .3vw solid transparent;
+        border-right: .3vw solid transparent;
+        -webkit-transform: rotate(-35deg);
+        -moz-transform: rotate(-35deg);
+        -ms-transform: rotate(-35deg);
+        -o-transform: rotate(-35deg);
+    }
+    .star::after {
+        top: .03vw;
+        left: -1.05vw;
+        color: var(--fith-color);
+        border-right: 1vw solid transparent;
+        border-bottom: .7vw solid var(--fith-color);
+        border-left: 1vw solid transparent;
+        -webkit-transform: rotate(-70deg);
+        -moz-transform: rotate(-70deg);
+        -ms-transform: rotate(-70deg);
+        -o-transform: rotate(-70deg);
+    }
+}

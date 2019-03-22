@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color: red;
+  --secondary-color: #fff;
+  --third-color: #bbb;
+  --fourth-color: #3f0202;
+  --fith-color: #ff8a00;
+ }
+body{
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background: radial-gradient(ellipse at top left, #3f0202 0, var(--main-color));
+  padding: 0vw 10vw 2vw 10vw;
+  background-size: 50vw 0.14vw;
+    }
+   
+html, body { height: 100%; }
