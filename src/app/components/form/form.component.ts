@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AgappeService } from '../../../services/agappe.service';
+import { Agappes } from '../../../models/agappes';
 
 
 
@@ -13,16 +14,19 @@ import { AgappeService } from '../../../services/agappe.service';
 export class FormComponent implements OnInit {
   basicForm: FormGroup;
   modeloItem: AgappeService;
+  agappes: Agappes[];
 
 
-  constructor(private formBuilder: FormBuilder, private modelAgappes: AgappeService) { }
+  constructor(private formBuilder: FormBuilder, private modelAgappes: AgappeService, private agappeService: AgappeService) { }
 
   ngOnInit() {
     this.basicForm = this.formBuilder.group({
-      party:  ['', [Validators.required, Validators.minLength(5)] ],
+      name:  ['', [Validators.required, Validators.minLength(2)] ],
+      title: ['', [Validators.required] ],
       day: ['', [Validators.required] ],
       time: ['', [Validators.required] ],
-      name: ['', [Validators.required] ]
+      full_address: ['', [Validators.required] ],
+      rating: ['', [Validators.required] ],
 
     });
 
@@ -31,8 +35,7 @@ export class FormComponent implements OnInit {
 get formForm() {
   return this.basicForm.get('name');
 }
-/* updateName() {
- return this.modelAgappes.getAgappes();
- // this.basicForm.setValue( basicForms => {this.basicForm = basicForms; } );
-  } */
+postMe(agappe: Agappes[]) {
+  this.agappeService.postAgappes(this.agappes).subscribe(datafono => this.agappes.push());
+}
 }

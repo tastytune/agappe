@@ -12,9 +12,15 @@ import { catchError } from 'rxjs/operators';
 export class AgappeService {
   constructor(private http: HttpClient) {}
 
-  /* agappesUrl = '../assets/agappes.json'; A json-server --watch agappes.json no le gusta la etrucura en array*/
+  /* agappesUrl = '../assets/agappes.json'; A json-server --watch agappes.json no le gusta la etrucura de datos en array*/
 
-  agappesUrl = 'https://jsonplaceholder.typicode.com/users';
+ /*  agappesUrl = 'https://jsonplaceholder.typicode.com/users'; */
+
+/*   agappesUrl = 'http://www.hackathonwatch.com/api/hackathons/coming.json';  No admite método PUT */ 
+
+  agappesUrl = 'https://sheetsu.com/apis/v1.0su/ed85d75c4d7d';
+
+ 
   agappespost: Observable<any>;
   agappePost: Agappes[];
 
@@ -28,9 +34,7 @@ export class AgappeService {
   getAgappes(): Observable<Agappes[]> {
     return this.http.get<Agappes[]>(this.agappesUrl);
   }
-/*   getJSONplacegolder(): Observable<Agappes[]> {
-    return this.http.get<Agappes[]>('https://api.github.com/users/seeschweiler');
-  }*/
+
   postAgappes(agappespost: Agappes[]): Observable<Agappes[]> {
     console.log(this.httpOptions);
     console.log(this);
@@ -39,12 +43,6 @@ export class AgappeService {
            catchError(this.handleError)
     );
   }
-  /*
-  postCopon(): Observable<Agappes[]> {
-     return this.http.post<Agappes[]>(this.agappesUrl, this.agappespost);
-
-  }
-*/
 
 
   // Error handling

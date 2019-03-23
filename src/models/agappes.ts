@@ -1,9 +1,10 @@
 export interface Agappes {
     id: number;
     name: string;
-    username: string;
-    address: string;
+    title: string;
     day: Date;
-    party: string;
-
+    time: number;
+    full_address: string;
+    rating: number;
 }
+

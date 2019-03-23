@@ -3,7 +3,7 @@
 <form [formGroup]="basicForm" >
 
   <mat-form-field>
-    <input matInput placeholder="Party title" formControlName="party">
+    <input matInput placeholder="Name" formControlName="name">
     <mat-error *ngIf="party">
       This field is mandatory!
     </mat-error>
@@ -11,26 +11,40 @@
 
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Day" formControlName="day">
+    <input matInput placeholder="Agappe Title" formControlName="title">
     <mat-error *ngIf="day">
       This field is mandatory!
     </mat-error>
 
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Time" formControlName="time">
+    <input matInput placeholder="Day" formControlName="day">
     <mat-error *ngIf="time">
       This field is mandatory!
     </mat-error>
 
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Your Name" formControlName="name">
+    <input matInput placeholder="Time" formControlName="time">
     <mat-error *ngIf="name">
       This field is mandatory!
     </mat-error>
 
   </mat-form-field>
-  <!-- <mat-checkbox formControlName="agree" color="primary">Are you sure?</mat-checkbox> -->
-  <button mat-raised-button [disabled]="basicForm.invalid || loading" color="primary"  (click)="updateName()">Let's Party</button>
+  <mat-form-field>
+    <input matInput placeholder="Adress" formControlName="full_address">
+    <mat-error *ngIf="name">
+      This field is mandatory!
+    </mat-error>
+
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Star me" formControlName="rating">
+    <mat-error *ngIf="name">
+      This field is mandatory!
+    </mat-error>
+
+  </mat-form-field>
+ 
+  <button mat-raised-button [disabled]="basicForm.invalid || loading" color="primary"  (click)="postMe()">Let's Party</button>
 </form>

@@ -13,20 +13,19 @@ export class AgappesComponent implements OnInit {
   data = {
     id: 100,
     name: 'Elvis Presley',
-    username: 'El rey',
-    address: 'Rock and Roll Street, London',
+    title: 'Rockandrolla times',
     day: new Date(2011, 9, 8),
-    party: 'Here comes the Postman'
-   };
+    time: 20,
+    full_address: 'Rock and Roll Street 28, London, UK',
+    rating: 3,
+  };
 
 
   constructor(private agappeService: AgappeService) { }
 
   ngOnInit() {
     this.agappeService.getAgappes().subscribe(agappe => { this.agappes = agappe; });
-/*     this.agappeService.postAgappes(this.agappes).subscribe(agappe => { this.agappes = agappe; });
- */  /*   this.agappeService.getJSONplacegolder().subscribe(data => {console.log(data);
-    }); */
+
   }
   postMe(agappe: Agappes[]) {
     this.agappeService.postAgappes(this.agappes).subscribe(datafono => this.agappes.push(this.data));
