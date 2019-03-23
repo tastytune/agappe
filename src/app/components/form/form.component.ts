@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AgappeService } from '../../../services/agappe.service';
 
 
 
@@ -11,9 +12,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
   basicForm: FormGroup;
+  modeloItem: AgappeService;
 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private modelAgappes: AgappeService) { }
 
   ngOnInit() {
     this.basicForm = this.formBuilder.group({
@@ -26,8 +28,11 @@ export class FormComponent implements OnInit {
 
     this.basicForm.valueChanges.subscribe(console.log);
   }
-  updateName() {
-    console.log('button clicked update');
-   // this.basicForm.setValue( basicForms => {this.basicForm = basicForms; } );
-    }
+get formForm() {
+  return this.basicForm.get('name');
+}
+/* updateName() {
+ return this.modelAgappes.getAgappes();
+ // this.basicForm.setValue( basicForms => {this.basicForm = basicForms; } );
+  } */
 }

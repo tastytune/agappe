@@ -1,4 +1,11 @@
 
-<div class="flexme">
-<app-agappeitem *ngFor="let agappe of agappes" [agappe]="agappe"></app-agappeitem>
+<div class="gridme">
+        <button (click)="postMe()" > Postman</button>
+        {{ newPost | async | json  }}
+        {{ agappes | json  }}
+
+      
+
+<app-agappeitem *ngFor="let agappe of agappes" [agappe]="agappe" ></app-agappeitem>
+
 </div>
